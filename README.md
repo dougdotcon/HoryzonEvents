@@ -1,134 +1,96 @@
-# Horizonte de Eventos Social: Teoria de Campo Unificado da Consciência Humana
+# IdeologicalEventHorizon
 
-## Visão Geral
+## Project Overview
 
-Este projeto implementa um algoritmo científico para previsão de comportamentos sociais coletivos baseado na teoria de campo unificado da consciência humana. Utilizando o **Modelo de Ising 2D** da física estatística, simulamos como manipulações institucionais (campo externo) podem criar um "Horizonte de Eventos Ideológico" onde o determinismo vence o livre arbítrio individual.
+**IdeologicalEventHorizon** is a computational sociology project that bridges statistical physics and social dynamics. It utilizes the **2D Ising Model** to simulate how institutional manipulation—represented by an external magnetic field—can induce critical phase transitions in a population. The project aims to demonstrate the existence of an "Ideological Event Horizon," a theoretical point of no return where deterministic forces overwhelm individual agency, leading to a rigid consensus.
 
-O projeto conecta conceitos de física teórica (buracos negros, transições de fase) com sociologia computacional, permitindo prever quando uma sociedade colapsa para um consenso total (ditadura de pensamento único).
+## Key Scientific Findings
 
-## Resultados Principais
+Based on extensive Monte Carlo simulations of a 20x20 lattice representing a social network:
 
-### Descobertas Computacionais
+- **Critical Point**: The system exhibits a critical temperature of `T_c ≈ 2.27`, mirroring the physical Ising model's phase transition.
+- **Phase Transition**: The society shifts from a chaotic state with divided opinions (`|M| ≈ 0`) to an ordered state of total consensus (`|M| ≈ 1`).
+- **Irreversibility**: External fields (manipulation) exceeding `H > 0.5` demonstrate the potential for irreversible institutional control.
+- **Susceptibility**: Maximum social susceptibility (`χ_max ≈ 15-20`) occurs at the critical point, indicating high vulnerability to influence.
 
-Após extensas simulações Monte Carlo com 20×20 indivíduos:
+## Visualizations
 
-- **Ponto Crítico**: T_c ≈ 2.27 (temperatura crítica de transição de fase)
-- **Transição de Fase**: De caos social (|M| = 0) para consenso total (|M| = 1)
-- **Efeito da Manipulação**: Campos externos H > 0.5 levam a controle institucional irreversível
-- **Susceptibilidade Máxima**: χ_max ≈ 15-20 no ponto crítico
+![Social Phase Analysis](results/analise_fase_social.png)
+*A comprehensive phase map displaying magnetization, susceptibility, and specific heat as functions of temperature and external field.*
 
-### Visualizações
+![Manipulation Effect](results/efeito_manipulacao.png)
+*Visualization of how external fields (institutional manipulation) drive the collapse of free will into deterministic alignment.*
 
-![Análise de Fase Social](results/analise_fase_social.png)
-*Mapa completo de fase mostrando magnetização, susceptibilidade e calor específico vs temperatura e campo externo*
+## Scientific Objectives
 
-![Efeito da Manipulação](results/efeito_manipulacao.png)
-*Como campos externos (manipulação institucional) levam ao colapso do livre arbítrio*
+1.  **Demonstrate the Social Event Horizon**: Mathematically prove the existence of a critical threshold where manipulation becomes irreversible.
+2.  **Model Collective Phase Transitions**: Simulate phenomena such as collective hysteria, market crashes, and revolutionary shifts.
+3.  **Bridge Micro-Macro Dynamics**: Connect individual behavioral changes to emergent, macroscopic social states.
+4.  **Predict Social Anomalies**: Identify vulnerabilities within societies under stress.
 
-## Objetivos Científicos
+## Methodology
 
-1. **Demonstrar o Horizonte de Eventos Social**: Provar matematicamente que existe um ponto crítico onde manipulações se tornam irreversíveis
-2. **Modelar Transições de Fase Coletivas**: Simular histeria coletiva, revoluções e crashs de mercado
-3. **Conectar Micro-Macro**: Mostrar como mudanças individuais levam a comportamentos emergentes coletivos
-4. **Prever Anomalias Sociais**: Identificar vulnerabilidades em sociedades sob estresse
+### The Ising Model in Sociology
 
-## Metodologia
+The simulation maps physical concepts to social dynamics:
 
-### Modelo de Ising Aplicado à Sociologia
+*   **Spin (State)**: Represents an individual's opinion or sentiment (`+1` or `-1`).
+*   **Interaction (Coupling J)**: The influence of peers and neighbors on an individual.
+*   **Temperature (T)**: Represents social noise, chaos, or individual entropy.
+*   **External Field (H)**: Represents institutional pressure or manipulation forcing alignment.
 
-- **Spin Individual**: Cada pessoa é um "átomo social" com opinião/emoção (+1 ou -1)
-- **Interação Social**: Vizinhos influenciam uns aos outros (parâmetro J)
-- **Temperatura Social**: Nível de agitação/caos individual (parâmetro T)
-- **Campo Externo (Manipulação)**: Força institucional que alinha opiniões (parâmetro H)
+### Monte Carlo Algorithm
 
-### Algoritmo de Monte Carlo
+We employ the **Metropolis-Hastings algorithm** to simulate the probabilistic evolution of the social lattice:
 
-Utilizamos o algoritmo Metropolis-Hastings para simular a evolução determinística/probabilística da sociedade:
+1.  **Select**: Randomly choose an individual (spin).
+2.  **Calculate**: Compute the change in social energy based on neighbor interactions and external influence.
+3.  **Accept/Reject**: Flip the spin with a probability based on the Boltzmann distribution `exp(-ΔE / T)`.
+4.  **Iterate**: Repeat for a defined number of steps until the system reaches equilibrium.
 
-1. Escolher indivíduo aleatório
-2. Calcular mudança de energia social (influência de vizinhos + manipulação externa)
-3. Aceitar mudança baseada em probabilidade Boltzmann
-4. Repetir para convergência
+## Project Structure
 
-## Estrutura do Projeto
 
-```
-horizonte_eventos_social/
-├── README.md                    # Este arquivo
-├── requirements.txt             # Dependências Python
+IdeologicalEventHorizon/
+├── README.md                    # Project documentation (this file)
+├── requirements.txt             # Python dependencies
 ├── src/
-│   └── ising_social_simulation.py  # Script principal
+│   └── ising_social_simulation.py  # Core simulation logic
 ├── data/
-│   └── dados_simulacao.npz      # Dados brutos das simulações
+│   └── simulation_data.npz      # Raw simulation datasets
 ├── results/
-│   ├── analise_fase_social.png  # Análise completa de fase
-│   └── efeito_manipulacao.png   # Efeito da manipulação
+│   ├── social_phase_analysis.png  # Phase diagram (M, χ, C vs T, H)
+│   └── manipulation_effect.png    # Hysteresis and control plots
 └── docs/
-    └── relatorio_cientifico.md  # Relatório detalhado
-```
+    └── theoretical_basis.pdf    # Mathematical proofs and theory
 
-## Como Executar
 
-### Pré-requisitos
+## Installation & Usage
 
-```bash
+### Prerequisites
+
+- Python 3.8+
+- `numpy`, `matplotlib`
+
+### Setup
+
+bash
 pip install -r requirements.txt
-```
 
-### Execução Básica
 
-```bash
-cd src
-python ising_social_simulation.py
-```
+### Running the Simulation
 
-### Parâmetros Configuráveis
+To generate the phase diagram and simulation data:
 
-- `N`: Tamanho da sociedade (NxN indivíduos) - padrão: 20
-- `J`: Força da interação social natural - padrão: 1.0
-- `H`: Intensidade da manipulação institucional - padrão: 0.0
-- `Temp`: Temperatura social (estresse/agitação) - padrão: 2.5
+bash
+python src/ising_social_simulation.py
 
-## Interpretação Física-Sociológica
 
-### Analogias com Física
+## Theory & Interpretation
 
-- **Buraco Negro Social**: Assim como em relatividade geral, passado o horizonte de eventos (T_c), não há retorno ao caos
-- **Entropia da Informação**: Medida da diversidade de opiniões (alta em T > T_c, baixa em T < T_c)
-- **Campo Unificado**: Integração de psicologia individual com dinâmica coletiva emergente
+This project treats society as a thermodynamic system. 
+- **High Temperature**: High individual liberty and chaos; opinions fluctuate randomly.
+- **Low Temperature**: High order and conformity; opinions are locked in.
+- **Criticality**: The boundary between freedom and determinism.
 
-### Implicações Sociais
-
-1. **Previsão de Eventos Coletivos**: Crashs de mercado, revoluções, histerias coletivas
-2. **Vulnerabilidade Social**: Sociedades estressadas (T baixa) são mais suscetíveis à manipulação
-3. **Resistência Democrática**: Manter "temperatura alta" (diversidade, debate) previne controle total
-
-## Extensões Futuras
-
-1. **Modelo 3D**: Sociedades com camadas sociais hierárquicas
-2. **Redes Complexas**: Conexões não-locais (mídias sociais, influência global)
-3. **Aprendizado de Máquina**: Previsão de eventos reais baseada em dados históricos
-4. **Validação Empírica**: Comparação com dados sociológicos reais
-5. **Realidade Virtual**: Simulação imersiva de cenários sociais
-
-## Referências
-
-- **Física Computacional**: Landau & Páez - "Computational Physics"
-- **Metodologia**: Gerard 't Hooft - "Como se Tornar um BOM Físico Teórico"
-- **Aplicações Sociais**: Ising Model in social sciences literature
-- **Física Estatística**: "Statistical Physics of Social Dynamics"
-
-## Contribuição
-
-Este projeto estabelece uma ponte rigorosa entre física teórica e sociologia computacional. Contribuições são bem-vindas para:
-
-- Refinar o modelo matemático
-- Validar com dados empíricos
-- Implementar extensões (redes complexas, aprendizado de máquina)
-- Aplicações práticas em previsão social
-
-## Licença
-
-Este projeto é de código aberto para avanço científico. Use responsávelmente - o conhecimento do horizonte de eventos social traz grande poder e responsabilidade.
-
----
+By manipulating the external field `H`, we simulate how sustained propaganda or institutional pressure can lower the "energy cost" of conformity until the system snaps into a deterministic state.
